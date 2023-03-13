@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block link %}<link rel="stylesheet" href="static/style.css">{% endblock %}
+{% block title %}{{ survey.title }}{% endblock %}
+
+{% block content %}
+    <h3>Take our survey!</h3>
+    <h1>{{ survey.title }}</h1>
+    <p>{{ survey.instructions }}</p>
+    <form action="{{ url_for('show_question', question_num=0) }}" method="POST">
+        <button type="submit">Start the Survey</button>
+    </form>
+{% endblock %}

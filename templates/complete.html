@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block link %}<link rel="stylesheet" href="static/style.css">{% endblock %}
+{% block title %}Survey Complete{% endblock %}
+
+{% block content %}
+  <h3>Thank you for completing our survey!</h3>
+  <p>Here are your responses:</p>
+  <ul>
+    {% for response in responses %}
+      <li>{{ response }}</li>
+    {% endfor %}
+  </ul>
+  <form method="get" action="/">
+      <button type="submit" class="btn btn-primary my-3">Back to Start</button>
+  </form>
+{% endblock %}
